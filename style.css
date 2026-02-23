@@ -610,3 +610,7 @@ body {
     gap: 24px;
   }
 }
+.instagram-media {
+  border-radius: 150px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+}

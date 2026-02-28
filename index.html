@@ -61,11 +61,35 @@
     <div class="psp-video-dialog">
       <button class="psp-modal-close" id="closeVideoModal" aria-label="Close video">✕</button>
       <div class="psp-video-frame">
-        <video id="pspVideo" controls playsinline>
-          <!-- Replace src with your own reel URL -->
-          <source src="https://youtu.be/jmcEVBATHlo?si=euB62vn3PzYa-qm8" type="video/mp4" />
+<div class="video-container" ID:"psp video">
+  <iframe 
+    src="https://www.youtube.com/embed/jmcEVBATHlo"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen>
+  </iframe>
+</div>
 
-        </video>
+<style>
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 900px; /* optional limit */
+  margin: auto;
+  padding-bottom: 56.25%; /* 16:9 ratio */
+  height: 0;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+}
+</style>
       </div>
      </div>
   </div>

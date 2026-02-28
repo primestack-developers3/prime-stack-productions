@@ -108,3 +108,41 @@ window.addEventListener("load", () => {
     });
   }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const videoModal = document.getElementById('videoModal');
+  const openBtn = document.getElementById('openVideoModal');
+  const watchReelBtn = document.getElementById('watchReelBtn');
+  const closeBtn = document.getElementById('closeVideoModal');
+  const iframe = videoModal.querySelector('iframe');
+  const videoSrc = iframe.src;
+
+  // Function to open modal
+  const openModal = () => {
+    videoModal.style.display = 'flex';
+    videoModal.setAttribute('aria-hidden', 'false');
+    // Autoplay trick: append autoplay to the URL when opened
+    iframe.src = videoSrc + "?autoplay=1";
+  };
+
+  // Function to close modal
+  const closeModal = () => {
+    videoModal.style.display = 'none';
+    videoModal.setAttribute('aria-hidden', 'true');
+    // Reset src to stop the video from playing in the background
+    iframe.src = "";
+    iframe.src = videoSrc;
+  };
+
+  // Event Listeners
+  openBtn.addEventListener('click', openModal);
+  watchReelBtn.addEventListener('click', openModal);
+  closeBtn.addEventListener('click', closeModal);
+
+  // Close if clicking outside the video dialog
+  videoModal.addEventListener('click', (e) => {
+    if (e.target.classList.contains('psp-video-backdrop')) {
+      closeModal();
+    }
+  });
+});

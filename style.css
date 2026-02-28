@@ -1,3 +1,40 @@
+/* Ensure the modal is hidden by default and sits on top */
+.psp-video-modal {
+  display: none; 
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.psp-video-backdrop {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9); /* Darken background */
+}
+
+.psp-video-dialog {
+  position: relative;
+  width: 90%;
+  max-width: 1000px;
+  z-index: 1001;
+}
+
+.psp-modal-close {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+}
 :root {
   --psp-bg: #050710;
   --psp-bg-soft: #0b0f1c;
